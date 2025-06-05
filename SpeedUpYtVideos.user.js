@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Speed Up Youtube Videos (v2)
+// @name         Speed Up Youtube Videos
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  Speed up all youtube videos to a custom speed
