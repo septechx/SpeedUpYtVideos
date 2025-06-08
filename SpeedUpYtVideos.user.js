@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Speed Up Youtube Videos
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  Speed up all youtube videos to a custom speed
 // @author       septech
 // @match        https://*.youtube.com/*
