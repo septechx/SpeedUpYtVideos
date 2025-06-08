@@ -6,8 +6,8 @@
 // @author       septech
 // @match        https://*.youtube.com/*
 // @match        https://*.youtube-nocookie.com/*
-// @updateURL    https://github.com/septechx/SpeedUpYtVideos/raw/main/SpeedUpYtVideos.user.js
-// @downloadURL  https://github.com/septechx/SpeedUpYtVideos/raw/main/SpeedUpYtVideos.user.js
+// @updateURL    https://raw.githubusercontent.com/septechx/SpeedUpYtVideos/refs/heads/master/SpeedUpYtVideos.user.js
+// @downloadURL  https://raw.githubusercontent.com/septechx/SpeedUpYtVideos/refs/heads/master/SpeedUpYtVideos.user.js
 // @grant        GM_getValue
 // @grant        GM_setValue
 // ==/UserScript==
