@@ -42,6 +42,10 @@
     .reduce((x, y) => x + y)
     .toString(16);
 
+  function log(string) {
+    console.log(`[SUYV | ${id}] ${string}`);
+  }
+
   const app = document.querySelector("ytd-app");
   const input = document.createElement("input");
   input.style =
@@ -49,12 +53,12 @@
   input.placeholder = "SUYV";
   document.body.insertBefore(input, app);
 
-  console.log(`[SUYV | ${id}] Created input`);
+  log("Created input");
 
   const speed = new State("speed", default_speed);
   const enable = new State("enable", default_enable);
 
-  console.log(`[SUYV | ${id}] Created state`);
+  log("Created state>");
 
   input.value = speed.state;
 
@@ -64,18 +68,18 @@
     try {
       const requestedSpeed = parseFloat(input.value);
       speed.state = requestedSpeed;
-      console.log(`[SUYV | ${id}] Set speed to ${speed.state}`);
+      log(`Set speed to ${speed.state}`);
 
       speedUpVideos();
     } catch (e) {
-      console.log(e);
+      log(e);
     }
   });
 
   window.addEventListener("keydown", (e) => {
     if (e.key === "s") {
       enable.state = !enable.state;
-      console.log(`[SUYV | ${id}] Set enabled to ${enable.state}`);
+      log(`Set enabled to ${enable.state}`);
 
       speedUpVideos();
     }
