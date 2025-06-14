@@ -1,13 +1,14 @@
 // ==UserScript==
 // @name         Speed Up Youtube Videos
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.3
 // @description  Speed up all youtube videos to a custom speed
 // @author       septech
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=youtube.com
 // @match        https://*.youtube.com/*
 // @match        https://*.youtube-nocookie.com/*
-// @updateURL    https://github.com/septechx/SpeedUpYtVideos/raw/main/SpeedUpYtVideos.user.js
-// @downloadURL  https://github.com/septechx/SpeedUpYtVideos/raw/main/SpeedUpYtVideos.user.js
+// @updateURL    https://raw.githubusercontent.com/septechx/SpeedUpYtVideos/refs/heads/master/SpeedUpYtVideos.user.js
+// @downloadURL  https://raw.githubusercontent.com/septechx/SpeedUpYtVideos/refs/heads/master/SpeedUpYtVideos.user.js
 // @grant        GM_getValue
 // @grant        GM_setValue
 // ==/UserScript==
