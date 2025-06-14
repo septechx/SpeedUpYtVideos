@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Speed Up Youtube Videos
 // @namespace    http://tampermonkey.net/
-// @version      1.4
+// @version      1.5
 // @description  Speed up all youtube videos to a custom speed
 // @author       septech
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youtube.com
@@ -49,10 +49,27 @@
 
   log(`Running in ${window.location.href}`);
 
+  const style = document.createElement("style");
+  style.textContent = `
+    .suyv-input::-webkit-inner-spin-button,
+    .suyv-input::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .suyv-input {
+      -moz-appearance: textfield;
+      position: absolute;
+      z-index: 2021;
+      background: #181818;
+      border: #181818;
+      color: #fff;
+    }
+  `;
+  document.head.appendChild(style);
+
   const app = document.querySelector("ytd-app");
   const input = document.createElement("input");
-  input.style =
-    "position: absolute; z-index: 2021; background: #181818; border: #181818; color: #fff;";
+  input.classList.add("suyv-input");
   input.placeholder = "SUYV";
   input.type = "number";
   document.body.insertBefore(input, app);
