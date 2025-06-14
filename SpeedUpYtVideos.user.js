@@ -46,11 +46,14 @@
     console.log(`[SUYV | ${id}] ${string}`);
   }
 
+  log(`Running in ${window.location.href}`);
+
   const app = document.querySelector("ytd-app");
   const input = document.createElement("input");
   input.style =
     "position: absolute; z-index: 2021; background: #181818; border: #181818; color: #fff;";
   input.placeholder = "SUYV";
+  input.type = "number";
   document.body.insertBefore(input, app);
 
   log("Created input");
