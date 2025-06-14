@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Speed Up Youtube Videos
 // @namespace    http://tampermonkey.net/
-// @version      1.3
+// @version      1.4
 // @description  Speed up all youtube videos to a custom speed
 // @author       septech
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youtube.com
