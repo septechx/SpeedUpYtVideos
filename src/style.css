@@ -1,0 +1,14 @@
+.suyv-input {
+  -moz-appearance: textfield;
+  position: absolute;
+  z-index: 2021;
+  background: #181818;
+  border: #181818;
+  color: #fff;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
