@@ -79,7 +79,7 @@
   const speed = new State("speed", default_speed);
   const enable = new State("enable", default_enable);
 
-  log("Created state>");
+  log("Created state");
 
   input.value = speed.state;
 
