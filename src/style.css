@@ -1,6 +1,6 @@
 .suyv-input {
   -moz-appearance: textfield;
-  position: absolute;
+  position: fixed;
   z-index: 2021;
   background: #181818;
   border: #181818;
