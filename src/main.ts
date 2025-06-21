@@ -48,37 +48,42 @@ const enable = new State<boolean>("enable", default_enable);
 
 log("Created state");
 
-input.value = speed.state;
-
-input.addEventListener("input", () => {
-  if (!input.value) return;
-
-  try {
-    const requestedSpeed = parseFloat(input.value);
-    speed.state = requestedSpeed;
-    log(`Set speed to ${speed.state}`);
-
-    speedUpVideos();
-  } catch (e: any) {
-    log(e);
-  }
-});
-
-window.addEventListener("keydown", (e) => {
-  if (e.key === "s") {
-    enable.state = !enable.state;
-    log(`Set enabled to ${enable.state}`);
-
-    speedUpVideos();
-  }
-});
-
-function speedUpVideos() {
+function reload() {
+  input.value = speed.state;
   const videos = document.querySelectorAll("video");
   videos.forEach((video) => {
     video.playbackRate = enable.state ? speed.state : 1;
   });
 }
 
-window.addEventListener("load", speedUpVideos);
-setInterval(speedUpVideos, 1000);
+input.addEventListener("input", () => {
+  if (!input.value) return;
+  const requestedSpeed = parseFloat(input.value);
+  if (Number.isNaN(requestedSpeed)) return;
+  speed.state = requestedSpeed;
+  log(`Set speed to ${speed.state}`);
+  reload();
+});
+
+window.addEventListener("keydown", (e) => {
+  switch (e.key) {
+    case "s":
+      enable.state = !enable.state;
+      log(`Set enabled to ${enable.state}`);
+      break;
+    case "q":
+      speed.state += 0.25;
+      log(`Sped up to ${speed.state}`);
+      break;
+    case "a":
+      speed.state -= 0.25;
+      log(`Slowed down to ${speed.state}`);
+      break;
+    default:
+      return;
+  }
+  reload();
+});
+
+window.addEventListener("load", reload);
+setInterval(reload, 1000);

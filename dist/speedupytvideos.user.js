@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Speed Up Yt Videos
 // @namespace    seps-scripts
-// @version      2.0.1
+// @version      2.1.0
 // @author       septech
 // @license      Unlicense
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youtube.com
@@ -54,32 +54,41 @@
   const speed = new State("speed", default_speed);
   const enable = new State("enable", default_enable);
   log("Created state");
-  input.value = speed.state;
-  input.addEventListener("input", () => {
-    if (!input.value) return;
-    try {
-      const requestedSpeed = parseFloat(input.value);
-      speed.state = requestedSpeed;
-      log(`Set speed to ${speed.state}`);
-      speedUpVideos();
-    } catch (e) {
-      log(e);
-    }
-  });
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "s") {
-      enable.state = !enable.state;
-      log(`Set enabled to ${enable.state}`);
-      speedUpVideos();
-    }
-  });
-  function speedUpVideos() {
+  function reload() {
+    input.value = speed.state;
     const videos = document.querySelectorAll("video");
     videos.forEach((video) => {
       video.playbackRate = enable.state ? speed.state : 1;
     });
   }
-  window.addEventListener("load", speedUpVideos);
-  setInterval(speedUpVideos, 1e3);
+  input.addEventListener("input", () => {
+    if (!input.value) return;
+    const requestedSpeed = parseFloat(input.value);
+    if (Number.isNaN(requestedSpeed)) return;
+    speed.state = requestedSpeed;
+    log(`Set speed to ${speed.state}`);
+    reload();
+  });
+  window.addEventListener("keydown", (e) => {
+    switch (e.key) {
+      case "s":
+        enable.state = !enable.state;
+        log(`Set enabled to ${enable.state}`);
+        break;
+      case "q":
+        speed.state += 0.25;
+        log(`Sped up to ${speed.state}`);
+        break;
+      case "a":
+        speed.state -= 0.25;
+        log(`Slowed down to ${speed.state}`);
+        break;
+      default:
+        return;
+    }
+    reload();
+  });
+  window.addEventListener("load", reload);
+  setInterval(reload, 1e3);
 
 })();
