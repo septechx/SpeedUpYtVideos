@@ -34,12 +34,12 @@ function log(str: string) {
 
 log(`Running in ${window.location.href}`);
 
-const app = document.querySelector("ytd-app");
+const body = document.querySelector("body");
 const input = document.createElement("input");
 input.classList.add("suyv-input");
 input.placeholder = "SUYV";
 input.type = "number";
-document.body.insertBefore(input, app);
+document.insertBefore(input, body);
 
 log("Created input");
 
