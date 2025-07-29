@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Speed Up Yt Videos
-// @namespace    seps-scripts
-// @version      2.1.0
+// @namespace    siesque
+// @version      2.1.1
 // @author       septech
 // @license      Unlicense
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youtube.com
@@ -14,7 +14,7 @@
 // @grant        GM_setValue
 // ==/UserScript==
 
-(e=>{if(typeof GM_addStyle=="function"){GM_addStyle(e);return}const t=document.createElement("style");t.textContent=e,document.head.append(t)})(" .suyv-input{-moz-appearance:textfield;position:fixed;z-index:2021;background:#181818;border:#181818;color:#fff}.suyv-input::-webkit-inner-spin-button,.suyv-input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0} ");
+(t=>{if(typeof GM_addStyle=="function"){GM_addStyle(t);return}const e=document.createElement("style");e.textContent=t,document.head.append(e)})(" .suyv-input{-moz-appearance:textfield;position:fixed;z-index:2021;background:#181818;border:#181818;color:#fff;margin-top:-12px}.suyv-input::-webkit-inner-spin-button,.suyv-input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0} ");
 
 (function () {
   'use strict';

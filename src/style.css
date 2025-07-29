@@ -5,6 +5,7 @@
   background: #181818;
   border: #181818;
   color: #fff;
+  margin-top: -12px;
 
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {
