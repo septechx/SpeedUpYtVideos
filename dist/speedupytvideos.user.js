@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Speed Up Yt Videos
 // @namespace    siesque
-// @version      2.1.2
+// @version      2.1.3
 // @author       septech
 // @license      Unlicense
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youtube.com
@@ -44,12 +44,12 @@
     console.log(`[SUYV | ${id}] ${str}`);
   }
   log(`Running in ${window.location.href}`);
-  const body = document.querySelector("body");
+  const app = document.querySelector("ytd-app");
   const input = document.createElement("input");
   input.classList.add("suyv-input");
   input.placeholder = "SUYV";
   input.type = "number";
-  document.insertBefore(input, body);
+  document.body.insertBefore(input, app);
   log("Created input");
   const speed = new State("speed", default_speed);
   const enable = new State("enable", default_enable);
